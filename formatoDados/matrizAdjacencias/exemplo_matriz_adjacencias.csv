@@ -1,0 +1,24 @@
+1,4,7,2,3,5,6,8,9 <- a linha cabeçalho não existirá
+0,1,1             <- valores incompletos em disco
+0,0,0,0,0,1,1
+0,0,0,0,0,0,0,1
+0,1,0,0
+0,0,1,0,0
+                  <- linhas em branco haverão
+0,0,0,0,0,0,0,0,0 <- gravando-se eventualmente no disco retornará consistente
+0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0
+
+1. O pacote xxx@xxx já foi inserido?
+* É preciso um dicionário mantido em memória. Será iterado (internamente) sobre todas as chaves até encontrar-se sua ocorrência. Seu acesso é O(N).
+A posição em que o pacote aparece no arquivo índice indica se ele foi inserido. Seu acesso é O(N).
+
+2. Qual é o índice do pacote xxx@xxx?
+* O dicionário armazenará o índice de cada pacote. Seu acesso é O(1).
+A posição em que o pacote aparece no arquivo índice também corresponde a sua linha e coluna. Seu acesso é O(N).
+
+3. O índice xxx corresponde a qual pacote?
+O dicionário não pode responder essa informação.
+A matriz de adjacências não pode responder essa informação.
+Outro dicionário pode ser criado em memória. Deverá manter-se consistente. Seu acesso é O(1).
+* A posição em que o pacote aparece no arquivo índice também corresponde a sua linha e coluna. Seu acesso é O(1).
