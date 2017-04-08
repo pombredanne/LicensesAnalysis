@@ -36,4 +36,4 @@ NoSQL, disco e RAM
 Uma lista de dependências contém dados redundantes e profundidade zero em cada árvore. Não é possível rastrear o momento em que as licenças foram violadas.
 SQL, NoSQL, disco e RAM
 
-![Pipeline](PipelineLicensesAnalysis.png)
+![Pipeline](https://github.com/rmeloca/LicensesAnalysis/blob/master/PipelineLicencesAnalysis.png)
