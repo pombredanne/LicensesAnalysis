@@ -14,6 +14,7 @@ DROP TABLE IF EXISTS `npm_dependencies`.`Packages` ;
 CREATE TABLE IF NOT EXISTS `npm_dependencies`.`Packages` (
   `package` CHAR(40) NOT NULL,
   `version` CHAR(30) NOT NULL,
+  `package_index` INT(11) NOT NULL,
   `license` CHAR(60),
   CONSTRAINT `pk_packages` PRIMARY KEY (`package`,`version`))
 ENGINE = InnoDB;

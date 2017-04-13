@@ -21,7 +21,7 @@ if __name__ == '__main__':
 		con = MySQLdb.connect(host=DB_HOST, user=DB_USER, passwd=DB_PASSWORD,db='npm_dependencies')
 		cursor = con.cursor()
 		index = 0
-		cursor.execute("SELECT * FROM Packages limit 100;")
+		cursor.execute("SELECT * FROM Packages;")
 		for row in cursor:
 			package = row[0]
 			version = row[1]

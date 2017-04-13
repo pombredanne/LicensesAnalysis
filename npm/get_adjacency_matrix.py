@@ -20,9 +20,9 @@ if __name__ == '__main__':
 			except Exception:
 				dependencies = []
 			dependencyIndexes = []
-			for dependencie in dependencies:
+			for dependency in dependencies:
 				try:
-					dependencyIndexes.append(packages[dependencie]["index"])
+					dependencyIndexes.append(packages[dependency]["index"])
 				except Exception as e:
 					print(e)
 			dependencyIndexes.sort()
