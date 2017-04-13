@@ -12,7 +12,7 @@ Adotando NoSQL ou JSON em disco, para montar a matriz de dependência um process
 Uma matriz de dependências pode ser mantida em disco ou em memória sob o mesmo algoritmo e análise aplicado à segunda abordagem.
 
 A segunda abordagem é fazer crawling linear da lista de pacotes.
-O impacto positivo é a velocidade em coletar as consistências e visitar apenas uma vez cada nó.
+O impacto positivo é a velocidade em coletar as dependenências e visitar apenas uma vez cada nó.
 Seu impacto negativo é ter consistência no grafo apenas quando todas as dependências forem coletadas. Fissuras na coleta gerarão grafos que não condizem com o mundo real em alguns vértices.
 
 Manter todos os dados em arquivos no disco implicam em buscar em arquivos, seu acesso é O(n). Seu desempenho pode ser mais lento que uma base de dados. Recursos tecnológicos não precisam ser robustos.
