@@ -2,18 +2,20 @@
 # Para cada pacote do índice
 #   Obtenha seus metadados
 #   Para cada versão do pacote
-#     Grave em disco o JSON
+#     Inclua o registro no dicionário
+# Grave o JSON em disco
 
 import json
 import os
 import requests
 
 REGISTRY_URL = 'https://registry.npmjs.org'
-DEPENDENCY_LIST = None
 INDEX = 0
+DEPENDENCY_DICTIONARY = {}
 
 def fetch_dependencies(package):
 	global INDEX
+	global DEPENDENCY_DICTIONARY
 	try:
 		req = requests.get(os.path.join(REGISTRY_URL, package))
 		if req.status_code != 200:
@@ -40,11 +42,7 @@ def fetch_dependencies(package):
 			finally:
 				registry["dependencies"] = dependenciesArray
 				registry["index"] = INDEX
-				if INDEX > 0:
-					DEPENDENCY_LIST.write(",")
-					DEPENDENCY_LIST.write("\n")
-				DEPENDENCY_LIST.write("\""+registry["package"]+"@"+registry["version"]+"\":")
-				DEPENDENCY_LIST.write(json.dumps(registry))
+				DEPENDENCY_DICTIONARY[registry["package"]+"@"+registry["version"]] = registry
 				INDEX += 1
 	except Exception as e:
 		print(e)
@@ -52,8 +50,6 @@ def fetch_dependencies(package):
 if __name__ == '__main__':
 	limit = 0
 	visitedPackages = open("visitedPackages", "w")
-	DEPENDENCY_LIST = open("dependencyList.json", "w")
-	DEPENDENCY_LIST.write("{")
 	with open("index") as packages:
 		for package in packages:
 			package = package[:-1]
@@ -63,6 +59,7 @@ if __name__ == '__main__':
 			limit += 1
 			if limit == 50:
 				break
-	DEPENDENCY_LIST.write("}")
-	DEPENDENCY_LIST.close()
 	visitedPackages.close()
+	dependencyList = open("dependencyList.json", "w")
+	dependencyList.write(json.dumps(DEPENDENCY_DICTIONARY))
+	dependencyList.close()
