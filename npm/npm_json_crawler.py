@@ -34,6 +34,8 @@ def fetch_dependencies(package):
 					dependencyVersion = metadata["versions"][version]["dependencies"][dependency]
 					dependencyVersion = dependencyVersion.replace("~", "")
 					dependencyVersion = dependencyVersion.replace("^", "")
+					dependencyVersion = dependencyVersion.replace(">", "")
+					dependencyVersion = dependencyVersion.replace("<", "")
 					dependenciesArray.append(dependency+"@"+dependencyVersion)
 			except Exception as e:
 				print(e)
