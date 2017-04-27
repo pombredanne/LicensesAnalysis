@@ -6,8 +6,9 @@
 
 import json
 import sys
+from pymongo import MongoClient
 
-FOREST_DICTIONARY = {}
+FOREST = None
 PACKAGES = {}
 VISITED_PACKAGES = []
 
@@ -21,29 +22,30 @@ def buildTree(package):
 		tree["dependencies"] = None
 		dependencyForests = []
 		for dependency in dependencies:
-			if dependency not in FOREST_DICTIONARY.keys() and dependency not in VISITED_PACKAGES:
+			split = dependency.split("@")
+			result = FOREST.find_one({"package":split[0],"version":split[1]})
+			if result == None and dependency not in VISITED_PACKAGES:
 				buildTree(dependency)
-			if dependency in FOREST_DICTIONARY.keys():
-				dependencyForests.append(FOREST_DICTIONARY[dependency])
+			result = FOREST.find_one({"package":split[0],"version":split[1]})
+			if result != None:
+				dependencyForests.append(result)
 		tree["dependencies"] = dependencyForests
 	except Exception as e:
 		print(e)
 	finally:
-		FOREST_DICTIONARY[package] = tree
+		FOREST.insert_one(tree)
 
 def buildForest():
 	for package in PACKAGES:
-		if package not in FOREST_DICTIONARY.keys():
+		result = FOREST.find_one({"package":PACKAGES[package]["package"],"version":PACKAGES[package]["version"]})
+		if result == None:
 			buildTree(package)
 
 if __name__ == '__main__':
 	sys.setrecursionlimit(1500)
 	with open("dependencyList.json") as dependencyList:
 		PACKAGES = json.load(dependencyList)
-		try:
-			buildForest()
-		except Exception as e:
-			pass
-		finally:
-			with open("forestList.json", "a") as forestList:
-				forestList.write(json.dumps(FOREST_DICTIONARY))
+		client = MongoClient('localhost', 27017)
+		db = client.npm_forest
+		FOREST = db.forest
+		buildForest()
