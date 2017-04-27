@@ -31,3 +31,8 @@ plot(g, layout = layout)
 #g.vs.find("Dennis").degree()
 
 #g.vs.select(age_lt=30)
+#g.add_vertices(3)				#Adiciona três vertices ao grafo
+#g.add_edges([(0,1), (1,2)])		#Adiciona dois edges ao grafo
+#g.add_edges((2,0))
+#g.add_vertices(3)
+#summary(g)						#printa o grafo
