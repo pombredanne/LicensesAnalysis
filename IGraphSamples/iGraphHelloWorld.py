@@ -12,5 +12,22 @@ layout = g.layout("kk")
 #plot(g, layout = layout)
 plot(g, layout = layout)
 
+#Funções adicionais:
+#g.degree() #Retorna, para cada vertica, quantas conexões ele tem(quantos edges)
+#g.degree(type="in") #Para grafos direcionais, retorna as conexões de entrada
+#g.degree(type="out") #Para grafos direcionais, retorna as conexões de saida
+#g.degree(1) #Retorna os edges do vertice 1 somente
+#g.edge_betweenness() #Para cada vertice, mostra os edges entre ele
+#g.vs.select(_degree = g.maxdegree())["name"]
+#["Alice", "Bob"]
 
 
+#>>> claire = g.vs.find(name="Claire")
+#>>> type(claire)
+#igraph.Vertex
+#>>> claire.index
+#2
+
+#g.vs.find("Dennis").degree()
+
+#g.vs.select(age_lt=30)
