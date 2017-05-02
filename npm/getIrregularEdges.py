@@ -38,15 +38,11 @@ def compareLicenses(license1, license2):
 	try:
 		license1_index = getPermissivityIndex(license1)
 	except Exception as e:
-		print(PERMISSIVITY_INDEX)
-		license1_index = float(input("append license %s to index: " %(license1)))
-		insertLicenseToIndex(license1, license1_index)
+		pass
 	try:
 		license2_index = getPermissivityIndex(license2)
 	except Exception as e:
-		print(PERMISSIVITY_INDEX)
-		license2_index = input("append license %s to index: " %(license2))
-		insertLicenseToIndex(license2, license2_index)
+		pass
 	if license1_index == license2_index:
 		return 0
 	elif license1_index > license2_index:
@@ -73,7 +69,7 @@ def printIrregularEdges():
 				try:
 					print(edge[0], getLicense(package), " --> ", edge[1], getLicense(dependency))
 				except Exception as e:
-					print(edge[0], " --> ", edge[1])
+					pass
 
 if __name__ == '__main__':
 	with open("dependencyList.json") as dependencyList:
