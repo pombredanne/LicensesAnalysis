@@ -665,6 +665,7 @@ bfast
 bfork
 bfp
 BGData
+bgeva
 bglm
 BGLR
 bgmfiles
@@ -1190,6 +1191,7 @@ CHAT
 CHCN
 cheb
 chebpol
+checkarg
 CheckDigit
 checkmate
 checkpoint
@@ -6181,6 +6183,7 @@ NUCOMBog
 nullabor
 numbers
 numDeriv
+numKM
 numOSL
 nutshell
 nutshell.audioscrobbler
@@ -7048,6 +7051,7 @@ PRIMME
 PRIMsrc
 princurve
 prinsimp
+printr
 prioritylasso
 prism
 PRISMA
@@ -7822,6 +7826,7 @@ repolr
 ReporteRs
 ReporteRsjars
 reportr
+reportReg
 reportROC
 reportRx
 reports
@@ -8014,6 +8019,7 @@ RJSDMX
 rjson
 rjsonapi
 RJSONIO
+RJSplot
 rjstat
 rJython
 rkafka

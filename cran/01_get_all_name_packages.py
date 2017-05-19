@@ -1,13 +1,23 @@
+#encoding: utf-8
 from BeautifulSoup import BeautifulSoup
 import urllib2
 import re
 
-f = open('data/names_packages.txt', 'w')
+def get_name_packages():
 
-html_page = urllib2.urlopen("https://cran.r-project.org/web/packages/available_packages_by_name.html")
-soup = BeautifulSoup(html_page)
-for link in soup.findAll('a'):
-	if ('../../web/packages' in link.get('href')):
-		#print link.getText()
-		f.write(link.getText()+'\n')
-f.close()
+	file = open('data/names_packages.txt', 'w')
+	
+	html_page = urllib2.urlopen("https://cran.r-project.org/web/packages/available_packages_by_name.html")
+	soup = BeautifulSoup(html_page)
+	
+	for link in soup.findAll('a'):
+		if ('../../web/packages' in link.get('href')):
+			file.write(link.getText()+'\n')
+	file.close()
+
+
+if __name__ == '__main__':
+	try:
+		get_name_packages()
+	except Exception as e:
+		print(e)
