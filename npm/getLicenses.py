@@ -9,8 +9,8 @@ def extractLicenses(packages):
 	return licenses
 
 if __name__ == '__main__':
-	with open("dependencyList.json") as dependencyList:
+	with open("data/dependencyList.json") as dependencyList:
 		packages = json.load(dependencyList)
 		licenses = extractLicenses(packages)
-		with open("licenses.json", "w") as licensesList:
+		with open("data/licenses.json", "w") as licensesList:
 			licensesList.write(json.dumps(licenses))

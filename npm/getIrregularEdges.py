@@ -30,8 +30,8 @@ def printIrregularEdges():
 					pass
 
 if __name__ == '__main__':
-	with open("normalizedDependencyList.json") as dependencyList:
+	with open("data/normalizedDependencyList.json") as dependencyList:
 		PACKAGES = json.load(dependencyList)
-		with open("permissivityIndex.json") as permissivityIndex:
+		with open("data/permissivityIndex.json") as permissivityIndex:
 			COPYLEFT_LICENSES = json.load(permissivityIndex)
 		printIrregularEdges()

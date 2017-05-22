@@ -13,4 +13,4 @@ def fetchPackageList(dest):
             f.write(req.text.encode('utf-8'))
 
 if __name__ == '__main__':
-	fetchPackageList("nodejspackages.json")
+	fetchPackageList("data/nodejspackages.json")

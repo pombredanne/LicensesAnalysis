@@ -53,10 +53,10 @@ def fetchDependencies(package):
 
 if __name__ == '__main__':
 	limit = 0
-	visitedPackages = open("visitedPackages", "w")
-	DEPENDENCY_LIST = open("dependencyList.json", "w")
+	visitedPackages = open("data/visitedPackages", "w")
+	DEPENDENCY_LIST = open("data/dependencyList.json", "w")
 	DEPENDENCY_LIST.write("{")
-	with open("index") as packages:
+	with open("data/index") as packages:
 		for package in packages:
 			package = package[:-1]
 			fetchDependencies(package)

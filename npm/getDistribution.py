@@ -14,8 +14,8 @@ def getDistribution(packages):
 	return distribution
 
 if __name__ == '__main__':
-	with open("normalizedDependencyList.json") as dependencyList:
+	with open("data/normalizedDependencyList.json") as dependencyList:
 		packages = json.load(dependencyList)
 		distribution = getDistribution(packages)
-		with open("normalizedDistribution.json", "w") as distributionList:
+		with open("data/normalizedDistribution.json", "w") as distributionList:
 			distributionList.write(json.dumps(distribution))
