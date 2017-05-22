@@ -3,7 +3,7 @@ import os
 
 REGISTRY_URL = 'https://registry.npmjs.org'
 
-def fetch_package_list(dest):
+def fetchPackageList(dest):
     """
     Fetch npm package list, store the result in dest
     """
@@ -13,4 +13,4 @@ def fetch_package_list(dest):
             f.write(req.text.encode('utf-8'))
 
 if __name__ == '__main__':
-	fetch_package_list("nodejspackages.json")
+	fetchPackageList("nodejspackages.json")

@@ -12,7 +12,7 @@ REGISTRY_URL = 'https://registry.npmjs.org'
 DEPENDENCY_LIST = None
 INDEX = 0
 
-def fetch_dependencies(package):
+def fetchDependencies(package):
 	global INDEX
 	try:
 		req = requests.get(os.path.join(REGISTRY_URL, package))
@@ -59,7 +59,7 @@ if __name__ == '__main__':
 	with open("index") as packages:
 		for package in packages:
 			package = package[:-1]
-			fetch_dependencies(package)
+			fetchDependencies(package)
 			visitedPackages.write(package)
 			visitedPackages.write("\n")
 			limit += 1
