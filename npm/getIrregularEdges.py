@@ -8,14 +8,15 @@ def getLicenseList(package):
 
 def isIrregularEdge(edge):
 	try:
-		origemLicenseList = getLicenseList(edge[0])
-		destinoLicense = getLicenseList(edge[1])
-		for origem in origemLicenseList:
-			for destino in destinoLicense:
-				if origem not in COPYLEFT_LICENSES and destino in COPYLEFT_LICENSES:
+		sourceLicenseList = getLicenseList(edge[0])
+		targetLicenseList = getLicenseList(edge[1])
+		for source in sourceLicenseList:
+			for target in targetLicenseList:
+				if source not in COPYLEFT_LICENSES and target in COPYLEFT_LICENSES:
 					return True
 		return False
 	except Exception as e:
+		print(e)
 		return True
 
 def printIrregularEdges():
@@ -27,6 +28,7 @@ def printIrregularEdges():
 				try:
 					print(edge[0], getLicenseList(package), " --> ", edge[1], getLicenseList(dependency))
 				except Exception as e:
+					print(e)
 					pass
 
 if __name__ == '__main__':
