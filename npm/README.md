@@ -34,7 +34,7 @@
     1. `python getDistribution.py`
         1. Consumes `normalizedDependencyList.json`
         2. Produces `normalizedDistribution.json`
-    2. `python getIrregularEdges.py`
+    2. `python3.5 getIrregularEdges.py`
         1. Consumes `normalizedDependencyList.json`
         2. Consumes `permissivityIndex.json`
         3. Produces `classifiedDependencyList.json`

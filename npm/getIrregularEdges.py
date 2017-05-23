@@ -16,7 +16,6 @@ def isIrregularEdge(edge):
 					return True
 		return False
 	except Exception as e:
-		print(e)
 		return True
 
 def printIrregularEdges():
@@ -28,7 +27,7 @@ def printIrregularEdges():
 				try:
 					print(edge[0], getLicenseList(package), " --> ", edge[1], getLicenseList(dependency))
 				except Exception as e:
-					print(e)
+					print(edge[0], " --> ", edge[1])
 					pass
 
 if __name__ == '__main__':
