@@ -7,7 +7,7 @@ def getDependencies(package):
 	DEBUG_PACKAGES[package] = PACKAGES[package]
 	for dependency in PACKAGES[package]["dependencies"]:
 		try:
-			getDependencies(PACKAGES[dependency]["dependencies"])
+			getDependencies(dependecy)
 		except Exception as e:
 			pass
 
@@ -16,7 +16,7 @@ def iteratePackages():
 	for package in PACKAGES:
 		getDependencies(package)
 		n += 1
-		if n == 500:
+		if n == 50:
 			break
 
 		
