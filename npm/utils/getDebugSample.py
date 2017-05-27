@@ -2,14 +2,14 @@ import json
 
 PACKAGES = {}
 DEBUG_PACKAGES = {}
+VISITED_PACKAGES = []
 
 def getDependencies(package):
 	DEBUG_PACKAGES[package] = PACKAGES[package]
+	VISITED_PACKAGES.append(package)
 	for dependency in PACKAGES[package]["dependencies"]:
-		try:
+		if dependecy not in VISITED_PACKAGES:
 			getDependencies(dependecy)
-		except Exception as e:
-			pass
 
 def iteratePackages():
 	n = 0
