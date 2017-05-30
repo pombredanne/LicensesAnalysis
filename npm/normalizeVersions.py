@@ -49,7 +49,7 @@ if __name__ == '__main__':
 				version = pk[1]
 				if version.lower() == "latest" or version == "*":
 					if dependency in NORMALIZED_VERSIONS.keys():
-						print("R", dependency, "->", end=' ')
+						print("R:", dependency, "->", end=' ')
 						dependency = NORMALIZED_VERSIONS[dependency]
 					else:
 						try:
@@ -60,7 +60,7 @@ if __name__ == '__main__':
 						except Exception as e:
 							print(e)
 					packages[package]["dependencies"][index] = dependency
-					print("replaced to", dependency)
+					print(dependency)
 				index += 1
 		with open("data/normalizedVersionDependencyList.json", "w") as normalizedVersionDependencyList:
 			normalizedVersionDependencyList.write(json.dumps(packages))
