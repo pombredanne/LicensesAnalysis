@@ -1,7 +1,10 @@
 import requests
 import json
+import os
+from datetime import datetime
 
 REGISTRY_URL = 'https://registry.npmjs.org'
+NORMALIZED_VERSIONS = {}
 
 def parseDate(date):
 	date = date.replace("-", " ")
@@ -16,8 +19,7 @@ def parseDate(date):
 	dateVetor[3] = int(dateVetor[3])
 	dateVetor[4] = int(dateVetor[4])
 	dateVetor[5] = int(dateVetor[5])
-	dateVetor[6] = int(dateVetor[6])
-	dateReturn = datetime(dateVetor[0], dateVetor[1], dateVetor[2], dateVetor[3], dateVetor[4], dateVetor[5], dateVetor[6])
+	dateReturn = datetime(dateVetor[0], dateVetor[1], dateVetor[2], dateVetor[3], dateVetor[4], dateVetor[5])
 	return dateReturn
 
 def getLatestVersion(package):
@@ -27,9 +29,13 @@ def getLatestVersion(package):
 	metadata = json.loads(req.text)
 	latest = None
 	for version in metadata["time"]:
-		date = parseDate(metadata["time"][version])
-		if latest == None or date > latest["date"]:
-			latest = {"version": version, "date": date}
+		if version != "modified":
+			try:
+				date = parseDate(metadata["time"][version])
+				if latest == None or date > latest["date"]:
+					latest = {"version": version, "date": date}
+			except Exception as e:
+				print(e)
 	return latest["version"]
 
 if __name__ == '__main__':
@@ -42,8 +48,19 @@ if __name__ == '__main__':
 				dependencyName = pk[0]
 				version = pk[1]
 				if version.lower() == "latest" or version == "*":
-					version = getLatestVersion(dependencyName)
-					packages[package]["dependencies"][index] = version
+					if dependency in NORMALIZED_VERSIONS.keys():
+						print("replacing", dependency)
+						dependency = NORMALIZED_VERSIONS[dependency]
+					else:
+						try:
+							print("fetching", dependency)
+							version = getLatestVersion(dependencyName)
+							dependency = dependencyName+"@"+version
+							NORMALIZED_VERSIONS[dependency] = dependency
+						except Exception as e:
+							print(e)
+					packages[package]["dependencies"][index] = dependency
+					print("replaced to", dependency)
 				index += 1
 		with open("data/normalizedVersionDependencyList.json", "w") as normalizedVersionDependencyList:
 			normalizedVersionDependencyList.write(json.dumps(packages))
