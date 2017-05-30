@@ -7,8 +7,8 @@ def getDependencies(package):
 	DEBUG_PACKAGES[package] = PACKAGES[package]
 	for dependency in PACKAGES[package]["dependencies"]:
 		try:
-			getDependencies(dependecy)
-		except Exception as e:
+			getDependencies(dependency["package"])
+		except Exception as e:	
 			pass
 
 def iteratePackages():
@@ -23,7 +23,7 @@ def iteratePackages():
 if __name__ == '__main__':
 	# with open("../data/dependencyList.json") as dependencyList:
 	# with open("../data/normalizedDependencyList.json") as dependencyList:
-	with open("../data/classifiedDependencyList.json") as dependencyList:
+	with open("../../../classifiedDependencyList.json") as dependencyList:
 		PACKAGES = json.load(dependencyList)
 		iteratePackages()
 		print(json.dumps(DEBUG_PACKAGES))
