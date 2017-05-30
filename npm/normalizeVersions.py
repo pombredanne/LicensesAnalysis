@@ -1,5 +1,7 @@
 import requests
 import json
+import os
+from datetime import datetime
 
 REGISTRY_URL = 'https://registry.npmjs.org'
 
@@ -16,8 +18,7 @@ def parseDate(date):
 	dateVetor[3] = int(dateVetor[3])
 	dateVetor[4] = int(dateVetor[4])
 	dateVetor[5] = int(dateVetor[5])
-	dateVetor[6] = int(dateVetor[6])
-	dateReturn = datetime(dateVetor[0], dateVetor[1], dateVetor[2], dateVetor[3], dateVetor[4], dateVetor[5], dateVetor[6])
+	dateReturn = datetime(dateVetor[0], dateVetor[1], dateVetor[2], dateVetor[3], dateVetor[4], dateVetor[5])
 	return dateReturn
 
 def getLatestVersion(package):
@@ -27,9 +28,12 @@ def getLatestVersion(package):
 	metadata = json.loads(req.text)
 	latest = None
 	for version in metadata["time"]:
-		date = parseDate(metadata["time"][version])
-		if latest == None or date > latest["date"]:
-			latest = {"version": version, "date": date}
+		try:
+			date = parseDate(metadata["time"][version])
+			if latest == None or date > latest["date"]:
+				latest = {"version": version, "date": date}
+		except Exception as e:
+			pass
 	return latest["version"]
 
 if __name__ == '__main__':
@@ -42,8 +46,11 @@ if __name__ == '__main__':
 				dependencyName = pk[0]
 				version = pk[1]
 				if version.lower() == "latest" or version == "*":
-					version = getLatestVersion(dependencyName)
-					packages[package]["dependencies"][index] = version
+					try:
+						version = getLatestVersion(dependencyName)
+						packages[package]["dependencies"][index] = version
+					except Exception as e:
+						print(e)
 				index += 1
 		with open("data/normalizedVersionDependencyList.json", "w") as normalizedVersionDependencyList:
 			normalizedVersionDependencyList.write(json.dumps(packages))
