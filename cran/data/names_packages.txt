@@ -1068,6 +1068,7 @@ carx
 caschrono
 casebase
 caseMatch
+castor
 cat
 catdap
 catdata
@@ -1532,6 +1533,7 @@ cooptrees
 copBasic
 copCAR
 cope
+coppeCosenzaR
 coprimary
 copula
 Copula.Markov
@@ -1937,6 +1939,7 @@ DEMOVA
 dendextend
 dendroextras
 dendrometeR
+DendroSync
 DendSer
 dendsort
 DengueRT
@@ -2660,6 +2663,7 @@ event
 eventInterval
 events
 eventstudies
+EventStudy
 evidenceFactors
 evir
 evmix
@@ -3436,6 +3440,7 @@ GFA
 gfcanalysis
 GFD
 gfer
+gfmR
 GGally
 ggalt
 ggbeeswarm
@@ -4662,6 +4667,7 @@ labstats
 laeken
 laercio
 LaF
+lagged
 laGP
 Lahman
 LakeMetabolizer
@@ -4772,6 +4778,7 @@ lefse
 LEGIT
 leiv
 LeLogicielR
+lemon
 LendingClub
 lero.lero
 lessR
@@ -5798,6 +5805,7 @@ multiband
 MultiBD
 multibiplotGUI
 multiCA
+multicmp
 MultiCNVDetect
 multicon
 multicool
@@ -6150,6 +6158,7 @@ nplplot
 nplr
 NPMLEcmprsk
 npmlreg
+NPMOD
 NPMPM
 npmr
 npmv
@@ -6183,6 +6192,7 @@ NUCOMBog
 nullabor
 numbers
 numDeriv
+numGen
 numKM
 numOSL
 nutshell
@@ -6646,6 +6656,7 @@ PenCoxFrail
 pendensity
 penDvine
 penMSM
+penRvine
 pensim
 peperr
 peplib
@@ -6718,6 +6729,7 @@ phenmod
 pheno
 pheno2geno
 phenology
+PhenotypeSimulator
 PHeval
 phia
 philentropy
@@ -7325,6 +7337,7 @@ queueing
 quhomology
 QUIC
 quickmapr
+quickmatch
 quickpsy
 quickReg
 quint
@@ -7645,6 +7658,7 @@ Rcssplot
 rCUR
 rcure
 RCurl
+Rd2md
 Rd2roxygen
 rda
 RDataCanvas
@@ -7702,6 +7716,7 @@ readODS
 readOffice
 readr
 readstata13
+readtext
 readxl
 RealVAMS
 reams
@@ -7762,6 +7777,7 @@ regexr
 reghelper
 registry
 reglogit
+regnet
 regpro
 regress
 RegressionFactory
@@ -9179,6 +9195,7 @@ sorvi
 sos
 sos4R
 sotkanet
+sotu
 sound
 soundecology
 SoundexBR
@@ -9201,6 +9218,7 @@ spacejam
 spacetime
 spacodiR
 spacom
+spacyr
 SPADAR
 spAddins
 SpadeR
@@ -9254,6 +9272,7 @@ spatgraphs
 spatial
 spatial.gev.bma
 spatial.tools
+SpatialAcc
 spatialClust
 spatialCovariance
 spatialEco
@@ -10441,6 +10460,7 @@ weathermetrics
 weatherr
 webchem
 WebGestaltR
+webmockr
 webp
 webreadr
 webshot
@@ -10489,6 +10509,7 @@ WikipediR
 WikiSocio
 wikitaxa
 WilcoxCV
+wildcard
 wildlifeDI
 wildpoker
 windex
