@@ -1,4 +1,5 @@
 import json
+import sys
 
 PACKAGES = {}
 STRONG_COPYLEFT_LICENSES = []
@@ -39,7 +40,10 @@ def evaluateEdges():
 			PACKAGES[package]["regularityRate"] = 1
 
 if __name__ == '__main__':
-	with open("data/normalizedDependencyList.json") as dependencyList:
+	if len(sys.argv) < 2:
+		print("Usage:", sys.argv[0], "<input>")
+		sys.exit(1)
+	with open(sys.argv[1]) as dependencyList:
 		PACKAGES = json.load(dependencyList)
 		with open("data/strongCopyleftList.json") as strongCopyleftList:
 			STRONG_COPYLEFT_LICENSES = json.load(strongCopyleftList)
