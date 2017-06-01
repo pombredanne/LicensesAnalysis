@@ -6,6 +6,8 @@ GLOBAL_REGULARITY_RATE = {}
 VISITED_PACKAGES = []
 
 def calculateTree(package):
+	if package in VISITED_PACKAGES:
+		return
 	VISITED_PACKAGES.append(package)
 	globalRegularityRate = PACKAGES[package]["regularityRate"]
 	dependencies = PACKAGES[package]["dependencies"]
