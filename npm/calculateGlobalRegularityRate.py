@@ -27,8 +27,7 @@ def calculateForest():
 			method = "C:"
 		PACKAGES[package]["globalRegularityRate"] = GLOBAL_REGULARITY_RATE[package]
 		if GLOBAL_REGULARITY_RATE[package] < 1:
-			print(method, end=" ")
-			print("[" + str(len(VISITED_PACKAGES)) + "/" + str(len(PACKAGES.keys())) + "]", '\033[1m' + package + '\033[0m', "\t", "{" + str(len(PACKAGES[package]["dependencies"])) + "}", "\t", PACKAGES[package]["regularityRate"], "->", GLOBAL_REGULARITY_RATE[package])
+			print(method, "[" + str(len(VISITED_PACKAGES)) + "/" + str(len(PACKAGES.keys())) + "]", '\033[1m' + package + '\033[0m', "\t", "{" + str(len(PACKAGES[package]["dependencies"])) + "}", "\t", PACKAGES[package]["regularityRate"], "->", GLOBAL_REGULARITY_RATE[package])
 
 if __name__ == '__main__':
 	if len(sys.argv) < 3:
