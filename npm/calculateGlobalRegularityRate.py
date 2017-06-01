@@ -1,6 +1,5 @@
 import json
 import sys
-import traceback
 
 PACKAGES = {}
 GLOBAL_REGULARITY_RATE = {}
@@ -17,7 +16,7 @@ def calculateTree(package):
 				calculateTree(dependencyName)
 			globalRegularityRate *= GLOBAL_REGULARITY_RATE[dependencyName]
 			if GLOBAL_REGULARITY_RATE[dependencyName] < 1:
-				print("[" + str(len(VISITED_PACKAGES)) + "/" + str(len(PACKAGES.keys())) + "]", '\033[1m' + dependencyName + '\033[0m', "\t", "{" + len(PACKAGES[dependencyName]["dependencies"]) + "}", "\t", PACKAGES[dependencyName]["regularityRate"], "->", GLOBAL_REGULARITY_RATE[dependencyName])
+				print("[" + str(len(VISITED_PACKAGES)) + "/" + str(len(PACKAGES.keys())) + "]", '\033[1m' + dependencyName + '\033[0m', "\t", "{" + str(len(PACKAGES[dependencyName]["dependencies"])) + "}", "\t", PACKAGES[dependencyName]["regularityRate"], "->", GLOBAL_REGULARITY_RATE[dependencyName])
 		except Exception as e:
 			pass
 	GLOBAL_REGULARITY_RATE[package] = globalRegularityRate
