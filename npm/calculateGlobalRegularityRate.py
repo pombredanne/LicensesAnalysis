@@ -1,19 +1,25 @@
 import json
 import sys
+import traceback
 
 PACKAGES = {}
 GLOBAL_REGULARITY_RATE = {}
+VISITED_PACKAGES = []
 
 def calculateTree(package):
+	VISITED_PACKAGES.append(package)
 	globalRegularityRate = PACKAGES[package]["regularityRate"]
 	dependencies = PACKAGES[package]["dependencies"]
 	for dependency in dependencies:
 		try:
-			if dependency not in GLOBAL_REGULARITY_RATE.keys():
-				calculateTree(dependency)
-			globalRegularityRate *= GLOBAL_REGULARITY_RATE[dependency]
+			dependencyName = dependency["package"]
+			if dependencyName not in GLOBAL_REGULARITY_RATE.keys() and dependencyName not in VISITED_PACKAGES:
+				calculateTree(dependencyName)
+			globalRegularityRate *= GLOBAL_REGULARITY_RATE[dependencyName]
+			if GLOBAL_REGULARITY_RATE[dependencyName] < 1:
+				print("[" + str(len(VISITED_PACKAGES)) + "/" + str(len(PACKAGES.keys())) + "]", '\033[1m' + dependencyName + '\033[0m', "\t", "{" + len(PACKAGES[dependencyName]["dependencies"]) + "}", "\t", PACKAGES[dependencyName]["regularityRate"], "->", GLOBAL_REGULARITY_RATE[dependencyName])
 		except Exception as e:
-			print(e)
+			pass
 	GLOBAL_REGULARITY_RATE[package] = globalRegularityRate
 
 def calculateForest():
