@@ -15429,10 +15429,7 @@
       "R (&ge; 3.1.0)",
       "grImport"
     ],
-    "license": [
-      "LGPL-2|LGPL-2.1|MPL version 1.0|MPL version 1.1|MPL version 2.0[expanded from: LGPL (&ge; 2.0",
-      " &lt; 3) | Mozilla Public License]"
-    ],
+    "license": "LGPL-2|LGPL-2.1|MPL version 1.0|MPL version 1.1|MPL version 2.0[expanded from: LGPL (&ge; 2.0 &lt; 3) | Mozilla Public License]",
     "package": "personograph"
   },
   "manipulate@1.0.1": {
@@ -58230,10 +58227,7 @@
     "dependencies": [
       
     ],
-    "license": [
-      "LGPL-2|LGPL-2.1|MPL version 1.0|MPL version 1.1|MPL version 2.0[expanded from: LGPL (&ge; 2.0",
-      " &lt; 3) | Mozilla Public License]"
-    ],
+    "license": "LGPL-2|LGPL-2.1|MPL version 1.0|MPL version 1.1|MPL version 2.0[expanded from: LGPL (&ge; 2.0 &lt; 3) | Mozilla Public License]",
     "package": "mvrtn"
   },
   "uniah@1.0": {
@@ -64946,10 +64940,7 @@
       "Rcpp",
       "coda"
     ],
-    "license": [
-      "LGPL-2|LGPL-2.1[expanded from: LGPL (&ge; 2.0",
-      " &lt; 3)]"
-    ],
+    "license": "LGPL-2|LGPL-2.1[expanded from: LGPL (&ge; 2.0 &lt; 3)]",
     "package": "icenReg"
   },
   "JoSAE@0.2.3": {
@@ -69458,10 +69449,7 @@
       " utils",
       " R (&ge; 2.10)"
     ],
-    "license": [
-      "LGPL-2|LGPL-2.1| fileLICENSE[expanded from: LGPL (&ge; 2.0",
-      " &lt; 3) | file LICENSE]"
-    ],
+    "license": "LGPL-2|LGPL-2.1| fileLICENSE[expanded from: LGPL (&ge; 2.0 &lt; 3) | file LICENSE]",
     "package": "GGIR"
   },
   "imprProbEst@1.0.1": {

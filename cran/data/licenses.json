@@ -74,7 +74,7 @@
 "fileLICENSE",
 "GPL-2|GPL-3|BSD_2_clause+ fileLICENSE[expanded from: GPL (&ge; 2) | BSD_2_clause + file LICENSE]",
 "GPL-2(see fileLICENSE)",
-["LGPL-2|LGPL-2.1|MPL version 1.0|MPL version 1.1|MPL version 2.0[expanded from: LGPL (&ge; 2.0 &lt; 3) | Mozilla Public License]"],
+"LGPL-2|LGPL-2.1|MPL version 1.0|MPL version 1.1|MPL version 2.0[expanded from: LGPL (&ge; 2.0 &lt; 3) | Mozilla Public License]",
 "GPL-2|GPL-3| fileLICENCE[expanded from: GPL (&ge; 2) | file LICENCE]",
 "GNU General Public License (&ge; 3)",
 "EPL (&ge; 1.0)",
@@ -114,7 +114,7 @@
 "LGPL-2.1|LGPL-3[expanded from: LGPL (&gt; 2.0)]",
 "MIT+ fileLICENCE",
 "CC BY-SA 4.0+ fileLICENSE",
-["LGPL-2|LGPL-2.1[expanded from: LGPL (&ge; 2.0 &lt; 3)]"],
+"LGPL-2|LGPL-2.1[expanded from: LGPL (&ge; 2.0 &lt; 3)]",
 "EPL",
 "MIT+ fileLICENSE| Unlimited",
 "FreeBSD",
@@ -135,7 +135,7 @@
 "FreeBSD| fileLICENSE",
 "GPL-2|MIT+ fileLICENSE",
 "CC BY-SA 2.0+ fileLICENSE",
-["LGPL-2|LGPL-2.1| fileLICENSE[expanded from: LGPL (&ge; 2.0 &lt; 3) | file LICENSE]"],
+"LGPL-2|LGPL-2.1| fileLICENSE[expanded from: LGPL (&ge; 2.0 &lt; 3) | file LICENSE]",
 "GPL (&ge; 3)| fileLICENCE",
 "Apache License Version 2.0",
 "MPL (&ge; 2.0)",
@@ -150,5 +150,5 @@
 "GPL-2|GPL-3[expanded from: GPL] (see fileLICENSE)",
 "MIT License",
 "GPL-2|GPL-3|BSD_3_clause+ fileLICENSE[expanded from: GPL (&ge; 2) | BSD_3_clause + file LICENSE]",
-"LGPL-2|LGPL-3|GPL-2|GPL-3",
+"LGPL-2|LGPL-3|GPL-2|GPL-3"
 ]
