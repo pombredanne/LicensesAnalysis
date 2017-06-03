@@ -61,4 +61,3 @@ gems = list(it)
 gems = pandas.DataFrame(list(itertools.chain.from_iterable(gems)),
                         columns=('url', 'package', 'desc', 'downloads'))
 gems[['package']].to_csv('gems.csv', encoding='utf-8', index=False)
-print gems[['package']]

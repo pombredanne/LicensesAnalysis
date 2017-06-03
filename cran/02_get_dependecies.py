@@ -4,8 +4,6 @@ import urllib2
 import re
 import json
 
-import time
-
 #Parser de pacotes com dependência, versão e licença do repositório de pacotes do cran
 
 PACKAGES = {}
@@ -22,7 +20,7 @@ def get_dependencies():
 			name_version = ""
 
 			for table in soup.findAll('table'):
-
+				
 				for tr in table.findAll('tr'):
 					td = tr.findAll('td')
 					if (td[0].getText() == "Version:"):
@@ -44,12 +42,11 @@ def get_dependencies():
 					PACKAGES[name_version]["index"] = i
 					PACKAGES[name_version]["package"] = name
 		
-		if (i == 0): #para executar o teste em três casos
-			return None;
+		#if (i == 2): #para executar o teste em três casos
+		#	return None;
 		i += 1
 
 if __name__ == '__main__':
-	start_time = time.time()
 	try:
 		get_dependencies()
 	except Exception as e:
@@ -57,4 +54,3 @@ if __name__ == '__main__':
 	finally:
 		with open("data/dependencies.json", "w") as dependencies:
 					dependencies.write(json.dumps(PACKAGES))
-	print("--- %s seconds ---" % (time.time() - start_time))
