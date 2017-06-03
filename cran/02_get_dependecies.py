@@ -52,5 +52,5 @@ if __name__ == '__main__':
 	except Exception as e:
 		print(e)
 	finally:
-		with open("data/dependencies.json", "w") as dependencies:
+		with open("data/cranDependencies.json", "w") as dependencies:
 					dependencies.write(json.dumps(PACKAGES))

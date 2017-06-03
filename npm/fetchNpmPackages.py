@@ -5,7 +5,7 @@ REGISTRY_URL = 'https://registry.npmjs.org'
 
 def fetchPackageList(dest):
     """
-    Fetch npm package list, store the result in dest
+    Fetch cran package list, store the result in dest
     """
     req = requests.get(os.path.join(REGISTRY_URL, '-/all'))
     if req.status_code == 200:
