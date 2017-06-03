@@ -1,0 +1,13 @@
+{"b@1.0.3":{"dependencies": [{"requirements": ">= 0", "name": "blockenspiel"}, {"requirements": ">= 0", "name": "hitimes"}], "version": "1.0.3", "index": 0, "license": [], "package": "b"},
+"b@1.0.2":{"dependencies": [{"requirements": ">= 0", "name": "blockenspiel"}, {"requirements": ">= 0", "name": "hitimes"}], "version": "1.0.2", "index": 1, "license": [], "package": "b"},
+"b@1.0.1":{"dependencies": [{"requirements": ">= 0", "name": "blockenspiel"}, {"requirements": ">= 0", "name": "hitimes"}], "version": "1.0.1", "index": 2, "license": [], "package": "b"},
+"b@1.0.0":{"dependencies": [{"requirements": ">= 0", "name": "blockenspiel"}, {"requirements": ">= 0", "name": "hitimes"}], "version": "1.0.0", "index": 3, "license": [], "package": "b"},
+"b001e@0.0.1":{"dependencies": [], "version": "0.0.1", "index": 4, "license": null, "package": "b001e"},
+"b001e@0.0.0a":{"dependencies": [], "version": "0.0.0a", "index": 5, "license": null, "package": "b001e"},
+"B_123@0.0.0":{"dependencies": [{"requirements": "> 1.0", "name": "X_123"}], "version": "0.0.0", "index": 6, "license": ["MIT"], "package": "B_123"},
+"b189877-1@0.0.1":{"dependencies": [], "version": "0.0.1", "index": 7, "license": ["MIT"], "package": "b189877-1"},
+"b189877-1@0.0.1.dev":{"dependencies": [], "version": "0.0.1.dev", "index": 8, "license": ["MIT"], "package": "b189877-1"},
+"b189877-1@0.0.1.b1":{"dependencies": [], "version": "0.0.1.b1", "index": 9, "license": ["MIT"], "package": "b189877-1"},
+"b189877-1@0.0.pre.dev":{"dependencies": [], "version": "0.0.pre.dev", "index": 10, "license": ["MIT"], "package": "b189877-1"},
+"b189877-1@0.0.dev":{"dependencies": [], "version": "0.0.dev", "index": 11, "license": ["MIT"], "package": "b189877-1"},
+"b1_config@1.0":{"dependencies": [{"requirements": ">= 3.1", "name": "rails"}], "version": "1.0", "index": 12, "license": ["MIT"], "package": "b1_config"}}
