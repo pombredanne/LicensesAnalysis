@@ -1,8 +1,8 @@
 |  Method  |           Step           |     NPM     |     CRAN    |  RUBY GEMS  |
 |:--------:|:------------------------:|:-----------:|:-----------:|:-----------:|
-| Crawling |           Fetch Packages |      OK     |      OK     | Programming |
-| Crawling |             Create Index |      OK     | Unnecessary |             |
-| Crawling |       Get Adjacency List |      OK     |      OK     |             |
+| Crawling |           Fetch Packages |      OK     |      OK     |      OK     |
+| Crawling |             Create Index |      OK     | Unnecessary |      OK     |
+| Crawling |       Get Adjacency List |      OK     |      OK     |      OK     |
 | Offline  | Get Package Distribution |      OK     |      OK     |             |
 | Manually |       Normalize Licenses |      OK     |      OK     |             |
 | Manually |       Normalize Versions |      OK     |      OK     |             |
