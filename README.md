@@ -1,3 +1,40 @@
+|  Method  |           Step           |     NPM     |     CRAN    |  RUBY GEMS  |
+|:--------:|:------------------------:|:-----------:|:-----------:|:-----------:|
+| Crawling |           Fetch Packages |      OK     |      OK     | Programming |
+| Crawling |             Create Index |      OK     | Unnecessary |             |
+| Crawling |       Get Adjacency List |      OK     |      OK     |             |
+| Offline  | Get Package Distribution |      OK     |      OK     |             |
+| Manually |       Normalize Licenses |      OK     |      OK     |             |
+| Manually |       Normalize Versions |      OK     |      OK     |             |
+| Offline  | Get Package Distribution |      OK     |      OK     |             |
+| Offline  |      Get Irregular Edges |      OK     |      OK     |             |
+| Offline  |               Get Impact |      OK     |      OK     |             |
+
+```json
+{
+  "name@version1": {
+    "index": 0,
+    "package": "name",
+    "version": "version1",
+    "regularityRate": 1.0,
+    "globalRegularityRate": 0.75,
+    "license": [
+      "mit",
+      "gpl 3"
+    ],
+    "dependencies": [
+      {
+        "package": "name@version2",
+        "isRegular": true
+      },
+      {
+        "package": "name@version3",
+        "isRegular": null
+      }
+    ]
+  }
+```
+
 Duas abordagens existem.
 
 A primeira é fazer crawling na árvore toda.

@@ -1,5 +1,4 @@
 import json
-import sys
 
 if __name__ == '__main__':
 	with open("data/cranDependencies.json") as dependencyList:
@@ -9,11 +8,6 @@ if __name__ == '__main__':
 				normalizedLicenses = json.load(normalizedLicensesList)
 				packages = json.load(dependencyList)
 				for package in packages:
-					try:
-						packages[package]["license"] = normalizedLicenses[licenses.index(packages[package]["license"])]
-					except:
-						packages[package]["license"] = "NENHUMA|NO LICENSE"
-						
-						
+					packages[package]["license"] = normalizedLicenses[licenses.index(packages[package]["license"])]
 		with open("data/normalizedDependencyList.json", "w") as normalizedList:
 			normalizedList.write(json.dumps(packages))
