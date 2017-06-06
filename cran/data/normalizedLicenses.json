@@ -92,7 +92,7 @@
 ["cecill 2"],
 ["lgpl 3","gpl 2"],
 ["gpl 2","mit","file"],
-["gpl 2","artistic 2"]
+["gpl 2","artistic 2"],
 ["lgpl 3","file"],
 ["mit","file"],
 ["mpl 1.1"],
@@ -150,5 +150,4 @@
 ["gpl 2", "gpl 3", "gpl", "file"],
 ["mit"],
 ["gpl 2", "gpl 3", "bsd 3", "file", "gpl 2", "bsd 3", "file"],
-["lgpl 2", "lgpl 3", "gpl 2", "gpl 3"]
-]
+["lgpl 2", "lgpl 3", "gpl 2", "gpl 3"]]
