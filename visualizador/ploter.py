@@ -16,40 +16,6 @@ def getJson():
 	json_file = open(path,'r')	
 	metadata = json.loads(json_file.read())
 	return metadata
-'''	
-def mountTree(head, node, color):
-	#print(g.vs.find(name=node))
-	#print(node)
-	try:
-		g.vs.find(name=node)
-		#g.add_edge(g.vs.find(name=head),g.vs.find(name=node),color="black")
-	except:
-		try:
-			jnode = metadata[node]
-			if(color != "white"):
-				color = getNodeColor(jnode)
-			g.add_vertex(name=node, label=node, color=color)
-		except:
-			print "Unexpected error2:", sys.exc_info()[0]
-			#print(node)
-			pass
-	#print(metadata[head])
-	try:
-		dependencies = getDependencies(jnode)
-		for package in dependencies:
-			package_name = package["package"]
-			#package_name = package
-			mountTree(node, package_name, "orange")
-		if head != "":
-			relation_ship_type = package["isIrregular"]
-			edge_color = getEdgeColor(relation_ship_type)
-			g.add_edge(g.vs.find(name=head),g.vs.find(name=node), color=edge_color)
-		#print(node)
-	except:
-		print "Unexpected error1:", sys.exc_info()[0]
-		#print(node)
-		pass
-'''
 def getDependencies(package):
 	try:
 		return package['dependencies']
@@ -118,6 +84,20 @@ def initTree(head):
 
 
 if __name__ == '__main__':
+	
+	
+	metadata = getJson()
+	#node = "1@1.2.1"
+	n = 0
+	#package = "react-router@4.0.0"
+	#initTree(package)
+	
+	for package in metadata:
+		initTree(package)
+		n += 1
+		if n == 50:
+			break
+
 	layout = g.layout("kk")
 	visual_style = {}
 	visual_style["vertex_size"] = 130
@@ -126,18 +106,6 @@ if __name__ == '__main__':
 	visual_style["layout"] = layout
 	visual_style["bbox"] = (9000, 9000)
 	visual_style["margin"] = 100
-	
-	metadata = getJson()
-	#node = "1@1.2.1"
-	n = 0
-	#package = "react-router@4.0.0"
-	for package in metadata:
-		if "react" in package:
-			initTree(package)
-			n += 1
-			if n == 50:
-				break
-
 	plot(g, **visual_style)
 
 
