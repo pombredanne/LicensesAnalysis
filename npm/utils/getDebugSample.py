@@ -18,10 +18,12 @@ def getDependencies(package):
 def iteratePackages():
 	n = 0
 	for package in PACKAGES:
-		getDependencies(package)
-		n += 1
-		if n == 150:
-			break
+		jnode = PACKAGES[package]
+		if jnode["regularityRate"] < 1:
+			getDependencies(package)
+			n += 1
+			if n == 150:
+				break
 		
 if __name__ == '__main__':
 	# with open("../data/dependencyList.json") as dependencyList:

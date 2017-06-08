@@ -6,7 +6,9 @@ from igraph import *
 #path = '../formatoDados/debugSamples/debugClassifiedSample500Teste.json'
 #path = '../../classifiedDependencyList.json'
 #path = '../../normalizedVersionDependencyList.json'
-path = '../../globalRegularityRate.json'
+#path = '../../globalRegularityRate.json'
+path = '../formatoDados/debugSamples/debugSampleWithRate1.json'
+
 
 metadata = ""
 edge_color = "black"
