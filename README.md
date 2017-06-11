@@ -3,10 +3,10 @@
 | Crawling |           Fetch Packages |      OK     |      OK     |      OK     |
 | Crawling |             Create Index |      OK     | Unnecessary |      OK     |
 | Crawling |       Get Adjacency List |      OK     |      OK     |      OK     |
-| Offline  | Get Package Distribution |      OK     |      OK     |             |
-| Manually |       Normalize Licenses |      OK     |      OK     |             |
+| Offline  | Get Package Distribution |      OK     |      OK     |      OK     |
+| Manually |       Normalize Licenses |      OK     |      OK     |      OK     |
 | Manually |       Normalize Versions |      OK     |      OK     |             |
-| Offline  | Get Package Distribution |      OK     |      OK     |             |
+| Offline  | Get Package Distribution |      OK     |      OK     |      OK     |
 | Offline  |      Get Irregular Edges |      OK     |      OK     |             |
 | Offline  |               Get Impact |      OK     |      OK     |             |
 
