@@ -8,7 +8,7 @@
 | Manually |       Normalize Versions |      OK     |      OK     |      OK     |
 | Offline  | Get Package Distribution |      OK     |      OK     |      OK     |
 | Offline  |      Get Irregular Edges |      OK     |      OK     |      OK     |
-| Offline  |               Get Impact |      OK     |      OK     |             |
+| Offline  |               Get Impact |      OK     |      OK     |      OK     |
 
 ```json
 {
