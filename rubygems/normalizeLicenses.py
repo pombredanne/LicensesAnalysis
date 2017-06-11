@@ -8,6 +8,11 @@ if __name__ == '__main__':
 				normalizedLicenses = json.load(normalizedLicensesList)
 				packages = json.load(dependencyList)
 				for package in packages:
-					packages[package]["license"] = normalizedLicenses[licenses.index(packages[package]["license"])]
+					packageLicenses = packages[package]["license"]
+					if packageLicenses == None:
+						packageLicenses = []
+					packages[package]["license"] = []
+					for license in packageLicenses:
+						packages[package]["license"].append(normalizedLicenses[licenses.index(license)])
 		with open("data/normalizedDependencyList.json", "w") as normalizedList:
 			normalizedList.write(json.dumps(packages))
