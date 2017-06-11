@@ -1,4 +1,5 @@
 import json
+import sys
 
 def getDistribution(packages):
 	distribution = {}
@@ -14,8 +15,11 @@ def getDistribution(packages):
 	return distribution
 
 if __name__ == '__main__':
-	with open("data/dependencyList.json") as dependencyList:
+	if len(sys.argv) < 3:
+		print("Usage:", sys.argv[0], "<input> <output>")
+		sys.exit(1)
+	with open(sys.argv[1]) as dependencyList:
 		packages = json.load(dependencyList)
 		distribution = getDistribution(packages)
-		with open("data/distribution.json", "w") as distributionList:
+		with open(sys.argv[2], "w") as distributionList:
 			distributionList.write(json.dumps(distribution))
