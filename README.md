@@ -10,6 +10,19 @@
 | Offline  |      Get Irregular Edges |      OK     |      OK     |      OK     |
 | Offline  |               Get Impact |      OK     |      OK     |      OK     |
 
+|         Metric         |     NPM    | RubyGems |   CRAN   |
+|:----------------------:|:----------:|:--------:|:--------:|
+| Number of Packages     | 456092     | 154004   | 10677    |
+| Number of Versions     | 789366     | 2794023  | 10677    |
+| Number of Dependencies | 12017359   | 1930285  | 16843    |
+| Licenses Found         | 2071       | 1002     | 152      |
+| Licenses Normalized    | 748        | 201      | 49       |
+| Irregular Dependencies | 21382      | 7276     | 26       |
+| Affected Packages      | 44355      | 10601    | 20       |
+| First on Distribution  | MIT        | MIT      | GPL 3    |
+| Second on Distribution | null       | none     | GPL 2    |
+
+
 ```json
 {
   "name@version1": {
