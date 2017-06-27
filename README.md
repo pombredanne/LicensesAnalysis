@@ -22,7 +22,79 @@
 | First on Distribution  | MIT        | MIT      | GPL 3    |
 | Second on Distribution | null       | none     | GPL 2    |
 
-
+1.dependencies.json
+```json
+{
+  "name@version1": {
+    "index": 0,
+    "package": "name",
+    "version": "version1",
+    "license": "MIT or gpl 3, see in license.md",
+    "dependencies": [
+      ">= name@version2",
+      "name@*"
+    ]
+  }
+```
+2.normalizedLicenses.json
+```json
+{
+  "name@version1": {
+    "index": 0,
+    "package": "name",
+    "version": "version1",
+    "license": [
+      "mit",
+      "gpl 3"
+    ],
+    "dependencies": [
+      ">= name@version2",
+      "name@*"
+    ]
+  }
+```
+3.normalizedVersions.json
+```json
+{
+  "name@version1": {
+    "index": 0,
+    "package": "name",
+    "version": "version1",
+    "license": [
+      "mit",
+      "gpl 3"
+    ],
+    "dependencies": [
+      "name@version2",
+      "name@version3"
+    ]
+  }
+```
+4.classified.json
+```json
+{
+  "name@version1": {
+    "index": 0,
+    "package": "name",
+    "version": "version1",
+    "regularityRate": 1.0,
+    "license": [
+      "mit",
+      "gpl 3"
+    ],
+    "dependencies": [
+      {
+        "package": "name@version2",
+        "isRegular": true
+      },
+      {
+        "package": "name@version3",
+        "isRegular": null
+      }
+    ]
+  }
+```
+5.globalRegularityRate.json
 ```json
 {
   "name@version1": {
