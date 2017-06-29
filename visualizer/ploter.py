@@ -6,9 +6,9 @@ from igraph import *
 #path = '../formatoDados/debugSamples/debugClassifiedSample500Teste.json'
 #path = '../../classifiedDependencyList.json'
 #path = '../../normalizedVersionDependencyList.json'
-path = '../../globalRegularityRate.json'
+#path = '../../globalRegularityRate.json'
 #path = '../formatoDados/debugSamples/debugSampleWithRate1.json'
-
+path = '../cran/data/globalRegularityRate.json'
 
 metadata = ""
 edge_color = "black"
@@ -51,6 +51,7 @@ def mountTree(head, node, edge_color):
 		g.add_edge(g.vs.find(name=head),g.vs.find(name=node), color=edge_color, label="verticee")
 	except:
 		try:
+
 			jnode = metadata[node]
 			color = getNodeColor(jnode)
 			g.add_vertex(name=node, label=node, color=color)
@@ -94,30 +95,28 @@ def getGlobalRegularityRate(node):
 		print "Unexpected error4:", sys.exc_info()[0]
 
 if __name__ == '__main__':
+
 	metadata = getJson()
 	#node = "1@1.2.1"
 	n = 0
-	#package = "react-router@4.0.0"
-	#initTree(package)
-	package = "xlsx@0.8.0"
+	package = "LinRegInteractive@0.3-1"
+	initTree(package)
+	
 	for package in metadata:
 		global_regularity_rate = getGlobalRegularityRate(package)
 		if(global_regularity_rate < 1):
-			initTree(package)
-			n += 1
-		
-#errado
-			if n%30 == 0:
-				layout = g.layout("kk")
-				visual_style = {}
-				visual_style["vertex_size"] = 130
-				visual_style["edge_width"] = 5
-				visual_style["edge_arrow_size"] = 5
-				visual_style["layout"] = layout
-				visual_style["bbox"] = (9000, 9000)
-				visual_style["margin"] = 100
-				plot(g, **visual_style)
-				break
+ 			initTree(package)
 
-	#plot(g, layout = layout)
+			#n += 1
+			#if n == 2000:
+			#	break
 
+	layout = g.layout("kk")
+	visual_style = {}
+	visual_style["vertex_size"] = 130
+	visual_style["edge_width"] = 5
+	visual_style["edge_arrow_size"] = 5
+	visual_style["layout"] = layout
+	visual_style["bbox"] = (11000, 11000)
+	visual_style["margin"] = 100
+	plot(g, **visual_style)
