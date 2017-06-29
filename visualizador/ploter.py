@@ -6,8 +6,8 @@ from igraph import *
 #path = '../formatoDados/debugSamples/debugClassifiedSample500Teste.json'
 #path = '../../classifiedDependencyList.json'
 #path = '../../normalizedVersionDependencyList.json'
-#path = '../../globalRegularityRate.json'
-path = '../formatoDados/debugSamples/debugSampleWithRate1.json'
+path = '../../globalRegularityRate.json'
+#path = '../formatoDados/debugSamples/debugSampleWithRate1.json'
 
 
 metadata = ""
@@ -84,33 +84,40 @@ def initTree(head):
 		print "Unexpected error1:", sys.exc_info()[1]
 		print "Unexpected error1:", sys.exc_info()[2]
 
+def getGlobalRegularityRate(node):
+	try:
+		jnode = metadata[node]
+		global_regularity_rate = jnode["globalRegularityRate"]
+		return global_regularity_rate
+	except:
+		return 1
+		print "Unexpected error4:", sys.exc_info()[0]
 
 if __name__ == '__main__':
-	
-	
 	metadata = getJson()
 	#node = "1@1.2.1"
 	n = 0
 	#package = "react-router@4.0.0"
 	#initTree(package)
-	
+	package = "xlsx@0.8.0"
 	for package in metadata:
-		initTree(package)
-		n += 1
-		if n == 50:
-			break
-
-	layout = g.layout("kk")
-	visual_style = {}
-	visual_style["vertex_size"] = 130
-	visual_style["edge_width"] = 5
-	visual_style["edge_arrow_size"] = 5
-	visual_style["layout"] = layout
-	visual_style["bbox"] = (9000, 9000)
-	visual_style["margin"] = 100
-	plot(g, **visual_style)
-
-
+		global_regularity_rate = getGlobalRegularityRate(package)
+		if(global_regularity_rate < 1):
+			initTree(package)
+			n += 1
+		
+#errado
+			if n%30 == 0:
+				layout = g.layout("kk")
+				visual_style = {}
+				visual_style["vertex_size"] = 130
+				visual_style["edge_width"] = 5
+				visual_style["edge_arrow_size"] = 5
+				visual_style["layout"] = layout
+				visual_style["bbox"] = (9000, 9000)
+				visual_style["margin"] = 100
+				plot(g, **visual_style)
+				break
 
 	#plot(g, layout = layout)
 
