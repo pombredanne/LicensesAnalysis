@@ -14,6 +14,8 @@ def isIrregularEdge(edge):
 		for target in targetLicenseList:
 			if source not in STRONG_COPYLEFT_LICENSES and target in STRONG_COPYLEFT_LICENSES:
 				return True
+			if target == "copyright" or target == "none" or target == None:
+				return True
 	return False
 
 def evaluateEdges():

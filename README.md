@@ -13,7 +13,7 @@
 |         Metric         |     NPM    | RubyGems |   CRAN   |
 |:----------------------:|:----------:|:--------:|:--------:|
 | Number of Packages     | 456092     | 154004   | 10677    |
-| Number of Versions     | 789366     | 2794023  | 10677    |
+| Number of Versions     | 2794023    | 789366   | 10677    |
 | Number of Dependencies | 12017359   | 1930285  | 16843    |
 | Licenses Found         | 2071       | 1002     | 152      |
 | Licenses Normalized    | 748        | 201      | 49       |
